@@ -362,6 +362,14 @@ void loop() {
         for(var i = 0; i < sizeof(zone6RelayPins); i++) {
             // then put the pin off
             digitalWrite(zone6RelayPins[i], LOW);
+
+            // then cycle through all the LEDs and put them off
+            for(int i = 0; i < sizeof(zone6LEDArrayTerraceHouses); i++) {
+                for(int j = 0; j < sizeof(zone6LEDArrayTerraceHouses[0]); j++) {
+                    // then turn the light off
+                    zone6LEDArrayTerraceHouses[i][j] = CRGB(0x000000);
+                }
+            }
         }
     } 
 
